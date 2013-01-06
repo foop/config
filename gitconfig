@@ -1,0 +1,5 @@
+[user]
+	name = dominik
+	email = dominik@foop.at
+[core]
+	excludes = /home/dominik/.gitglobalignore
