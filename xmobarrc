@@ -1,0 +1,17 @@
+Config { 
+    font= "*font: xft:Ubuntu Mono:pixelsize=13",
+    bgColor = "black",
+    fgColor = "grey",
+    position = Top C,
+    commands = [
+        Run TopProc [] 20,
+        Run MultiCpu ["-t", "cpus: <total0>% <total1>% ", "-L", "3", "-H", "50", "--normal", "green", "--high", "red"] 10,
+        Run Memory ["-t", "Mem: <used>M"] 10,
+        Run Date "%a %_d %b %H:%M" "date" 10,
+        Run Network "eth0" [] 10,
+        Run StdinReader
+    ],
+    sepChar = "%",
+    alignSep = "}{",
+    template = "%StdinReader% }{ %eth0% |<fc=#9999FF> %multicpu% * %top% </fc> | %memory% | <fc=#ee9a00>%date%</fc> "
+}

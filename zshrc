@@ -136,3 +136,9 @@ if [[ $(ssh-add -l) != *id_?sa* ]]; then
     ssh-add -t 4h
 fi
 
+
+export PERL_LOCAL_LIB_ROOT="/home/dominik/perl5";
+export PERL_MB_OPT="--install_base /home/dominik/perl5";
+export PERL_MM_OPT="INSTALL_BASE=/home/dominik/perl5";
+export PERL5LIB="/home/dominik/perl5/lib/perl5/x86_64-linux-thread-multi:/home/dominik/perl5/lib/perl5";
+export PATH="/home/dominik/perl5/bin:$PATH";
