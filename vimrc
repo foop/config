@@ -1,4 +1,13 @@
 """ General stuff: 
+"enable 256 colors on gnome-terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+     
+
+"mark tabs (helps avoiding them)
+match ErrorMsg /\t/ 
+
 "statusline 
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
 set laststatus=2 "otherwise the statusline will not be shown - 2 stands for second last line
@@ -7,7 +16,7 @@ set laststatus=2 "otherwise the statusline will not be shown - 2 stands for seco
 set cursorline
 set cursorcolumn
 
-set background=light
+set background=dark
 set foldmethod=indent
 set expandtab
 set tabstop=4
@@ -15,6 +24,8 @@ set softtabstop=4
 set shiftwidth=4
 set cindent
 set hlsearch
+
+colorscheme vividchalk
 
 filetype plugin on
 filetype indent on
@@ -55,6 +66,3 @@ endfunction
 " Personal stuff:
 match Label /Dominik Danter/
 
-""" Sysadmin stuff
-autocmd BufEnter sources.list cabbrev sub %s/at.archive.ubuntu.com/ftp.halifax.rwth-aachen.de/
-autocmd BufEnter sources.list nmap #3 :sub<cr>

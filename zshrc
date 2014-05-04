@@ -1,3 +1,5 @@
+#path
+path+=('/home/foop/bin/')
 #set some useful options as stated in the ZSH book
 #
 #auto_cd: one can use /home/dotti instead of cd /home/dotti
@@ -12,20 +14,24 @@ setopt PROMPT_SUBST
 #PROMPT #Note can be named $PS1 as well
 autoload colors; colors #we need this otherwies ${bg[bla]} won't work
 #Small and Tidy prompt
-#First line displays line numbering and colours it green
-#Second line displayes red hostname if you are connected via ssh
-#Third line displays the hostname if you are root
-#Fourth line sets fg to red if you are root, otherwise bg and fg are set
-#       to default value, unless the exit status of the previous command
-#       had not been !=0 in which case fg is set to blue and bg to default
-#TODO maybe we shoud set bg and fg to default after RPROMPT or before command execution
-PROMPT='%{${fg[green]}%}%!\
-%{${fg[yellow]}%}$([[ -n $SSH_CLIENT ]] && (print -n -- " [@"; print -n "${HOST}]")) \
-%(!.%M .)\
-%(!.%{${fg[red]}%}#.%(?.%{${fg[default]}${bg[default]}%}%%.%{${fg[red]}${bg[default]}%}%%)) '
-#The %(?..) tests for the exit status and displays it [%?] if != 0
+
+##green line numbering
+# '%!' linee numbers
+PROMPT='%{${fg[green]}%}%!'
+#red hostname if connected via ssh
+PROMPT+='%{${fg[yellow]}%}$([[ -n $SSH_CLIENT ]] && (print -n -- " [@"; print -n "${HOST}]"))'
+##hostname if you are root 
+#'%(condition.true-text.false-text)' - "!" true if root
+#"%M" Full hostname of machine; 
+PROMPT+='%(!.%M .)'
+## change color of prompt depeding on exit status
+# '%%' = %;  
+#   if $? != 0                             else
+PROMPT+='%(?.%{${fg[default]}${bg[default]}%}.%{${fg[red]}${bg[default]}%})%% '
+#'%~' path, %? displays exit status
 RPROMPT='%~ %(?..%?)'
 
+#vim key bindings
 bindkey -v
 
 #History
@@ -63,9 +69,11 @@ fi
 #start iceweasel
 alias ii="iceweasel 2>/dev/null &" #TODO start $BROWSER
 
-#zsh config
-alias zz='source ~/.zshrc'
+#config
+alias zz='source ~/.zshrc && rehash'
 alias vz='vim ~/.zshrc && zz'
+alias vii='vim ~/.i3/config'
+alias vv='vim ~/.vimrc'
 
 #fancier ls 
 alias ls='ls --color=auto'
