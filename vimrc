@@ -3,6 +3,9 @@
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
+
+" set default supertab completion behaviour
+let g:SuperTabDefaultCompletionType = "context""
      
 
 "mark tabs (helps avoiding them)
