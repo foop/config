@@ -1,0 +1,15 @@
+" vim: set ft=vimperator:
+
+set gui=none
+
+map <A-t>   :tabnext  <CR>
+map <A-S-t> :tabmove +1 <CR>
+map <A-n>   :tabprevious <CR>
+map <A-S-n> :tabmove -1 <CR>
+
+map <A-g> <C-u>
+map <A-r> <C-d>
+
+"history
+map <A-h> :back <CR>
+map <A-f> :forward <CR>
