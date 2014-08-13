@@ -1,5 +1,6 @@
 #path
 path+=('/home/foop/bin/')
+path+=('/home/foop/altera/13.1/modelsim_ase/bin/')
 #set some useful options as stated in the ZSH book
 #
 #auto_cd: one can use /home/dotti instead of cd /home/dotti
@@ -7,7 +8,7 @@ path+=('/home/foop/bin/')
 #rm_star_wait: makes you double check when rm *ing
 #transient_rprompt: removes 'rprompt' when in the way
 setopt no_beep auto_cd complete_in_word correct rm_star_wait transient_rprompt autopushd noclobber extendedglob
-#sets LS_COLORS and hence makes ls more colourful
+#slllllets LS_COLORS and hence makes ls more colourful
 eval `dircolors`
 setopt PROMPT_SUBST
 
@@ -31,7 +32,7 @@ PROMPT+='%(?.%{${fg[default]}${bg[default]}%}.%{${fg[red]}${bg[default]}%})%% '
 #'%~' path, %? displays exit status
 RPROMPT='%~ %(?..%?)'
 
-#vim key bindings
+#avim key bindings
 bindkey -v
 
 #History
@@ -150,3 +151,9 @@ export PERL_MB_OPT="--install_base /home/dominik/perl5";
 export PERL_MM_OPT="INSTALL_BASE=/home/dominik/perl5";
 export PERL5LIB="/home/dominik/perl5/lib/perl5/x86_64-linux-thread-multi:/home/dominik/perl5/lib/perl5";
 export PATH="/home/dominik/perl5/bin:$PATH";
+
+if [ $TERM != "dumb" ]; then
+    if hash fortune 2>/dev/null; then
+        fortune -a
+    fi
+fi

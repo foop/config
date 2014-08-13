@@ -1,6 +1,7 @@
-## for all terminals 
+# for all terminals 
 
 *font: xft:Ubuntu Mono:pixelsize=14:
+
 
 ## URXVT
 
@@ -12,7 +13,7 @@ URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt*saveLines: 1000
 
-# Make Keypad work:
+### Make Keypad work:
 URxvt.keysym.KP_Add:    +
 URxvt.keysym.KP_Substract:  -
 URxvt.keysym.KP_Multiply:   *
@@ -29,3 +30,7 @@ URxvt.keysym.KP_7:  7
 URxvt.keysym.KP_8:  8
 URxvt.keysym.KP_9:  9
 URxvt.keysym.KP_0:  0
+### make alt key work 
+URxvt*meta8:true
+
+

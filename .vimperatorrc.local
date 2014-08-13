@@ -3,13 +3,32 @@
 set gui=none
 
 map <A-t>   :tabnext  <CR>
+map <A-e>   :tabnext  <CR>
 map <A-S-t> :tabmove +1 <CR>
 map <A-n>   :tabprevious <CR>
+map <A-i>   :tabprevious <CR>
 map <A-S-n> :tabmove -1 <CR>
 
 map <A-g> <C-u>
+map <A-l> <A-g>
+map <A-S-g> k
 map <A-r> <C-d>
+map <A-a> <A-r>
+map <A-S-r> j
 
 "history
 map <A-h> :back <CR>
 map <A-f> :forward <CR>
+
+
+"default search
+set defsearch=ddg
+
+"Get my damn focus back
+autocmd PageLoad .* :normal <Esc>
+
+"set vim as external editor
+set editor="gnome-terminal --disable-factory -x vim"
+
+"show list of tabs
+map <A-x> :buffer<Space>
