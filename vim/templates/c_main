@@ -1,0 +1,24 @@
+:insert
+/* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+
+* File Name :
+
+* Purpose : Fun
+
+* Creation Date :
+
+* Last Modified :
+
+* Created By : Dominik Danter
+
+_._._._._._._._._._._._._._._._._._._._._.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char **argv) {
+    //Happy Coding!
+    exit(EXIT_SUCCESS);
+}
+.
+

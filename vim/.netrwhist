@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/foop/sandbox/lavarel'
+let g:netrw_dirhist_2='/home/foop/sandbox/laravel/MiBlo/app/views/emails'
+let g:netrw_dirhist_3='/home/foop/sandbox/scala/bla/project'
+let g:netrw_dirhist_4='/home/foop/.i3'
+let g:netrw_dirhist_5='/media/werft/new/public/css'
+let g:netrw_dirhist_6='/home/foop/.vim'
